@@ -1,0 +1,10 @@
+*.*
+!.gitattributes
+!.gitignore
+!README.md
+!.gitkeep
+!*.tex
+!*.pdf
+!*.jpg
+!*.ino
+!*.png
