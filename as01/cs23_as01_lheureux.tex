@@ -1,0 +1,109 @@
+\documentclass[11pt, letterpaper, includehead]{article}
+
+%%%%%%%%%%%%%%%%%%%%% Pre-document %%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{array}
+\usepackage{nicematrix}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{multicol}
+\usepackage{scrextend}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\usepackage{amssymb}
+
+\setlength{\parindent}{0pt} % Remove auto paragraph indents
+
+% Get rid of those big margins
+\usepackage[margin=1in]{geometry}
+\newlength\titleindent
+\setlength\titleindent{2cm}
+
+\makeatletter
+\def\@mathmargin{1in}
+\makeatother
+
+\titleformat{\section}[runin]
+    {\normalfont\bfseries}% formatting commands to apply to the whole heading
+    {\thesubsection}% the label and number
+    {0.5em}% space between label/number and subsection title
+    {}% formatting commands applied just to subsection title
+    []% punctuation or other commands following subsection title
+
+
+\begin{document} 
+
+\pagestyle{fancy}
+% Header
+\fancyhead{}
+\fancyhead[L]{\textbf{CS23:} Assignment \#1}
+\fancyhead[R]{\href{mailto:stepanielh1111@gmail.com}{L'Heureux} \thepage}
+% No page numbers for footer
+\fancyfoot{}
+
+
+\begin{center}
+    \Large{\textbf{Assignment 1}}\\
+    \Large{Sets}
+\end{center}
+
+\section*{1.} Let $\text{A} = \{1, 2, 4\}$ and $\text{B} = \{2, 3, 4, 5\}$. Find each of the following sets.
+\begin{enumerate}[label=(\alph*)]
+    \item $\text{A} \cup \text{B}$ \newline
+    $\text{A} \cup \text{B} = \{1, 2, 3, 4, 5\}$
+
+    \item $\text{A} \cap \text{B}$ \newline 
+    $\text{A} \cap \text{B} = \{ 2, 4\}$
+
+    \item $\text{A} - \text{B}$ \newline
+    $\text{A} - \text{B} = \{1\}$
+
+    \item $\text{B} - \text{A}$ \newline
+    $\text{B} - \text{A} = \{3, 5\}$
+\end{enumerate}
+
+\section*{2.} Find the following cardinalities:
+\begin{enumerate}[label=(\alph*)]
+    \item $|\text{A}|  \text{ when A} = \{4, 5, 6, \dots, 32 \}$ \newline 
+    $|\text{A}| = 29$
+    \item $|\text{A}|  \text{ when A} = \{\text{x} \in \mathbb{Z}: -2 \le \text{x} \le 20\}$ \newline
+    $|\text{A}| = 23$
+\end{enumerate}
+
+\section*{3.} Find a set of the largest possible size that is a subset of both $\{1, 2, 3, 4, 5\}$ and $\{2, 4, 6, 8, 10\}$.
+\[\{1, 2, 3, 4, 5\} \cap \{2, 4, 6, 8, 10\} = \{2, 4\}\]
+
+\section*{4.} Find a set of the smallest possible size that has both $\{1, 2, 3, 4, 5\}$ and $\{2, 4, 6, 8, 10\}$ as subsets.
+\[\{1, 2, 3, 4, 5\} \cup \{2, 4, 6, 8, 10\} = \{1, 2, 3, 4, 5, 6, 8, 10\}\]
+
+
+\section*{5.} Let $\text{A} = \{\text{a}, \text{b}, \text{c}\}$. Find P(A).
+    
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccc}
+    a & b & c \\ \hline
+    0 & 0 & 0 \\
+    0 & 0 & 1 \\
+    0 & 1 & 0 \\
+    0 & 1 & 1 \\
+    1 & 0 & 0 \\
+    1 & 0 & 1 \\
+    1 & 1 & 0 \\
+    1 & 1 & 1
+    \end{tabular}
+\end{table}
+
+
+\[\text{P(A)}= \{ \varnothing, \{a\}, \{b\}, \{c\}, \{a, b\}, \{a, c\}, \{b, c\}, \{a, b, c\}\} \]
+
+\section*{6.} Consider the sets $\text{A}$ and $\text{B}$ where $\text{A} = \{3, |B|\}$ and $\text{B} = \{ 1, |\text{A}|, |\text{B}|\}$. What are the sets?
+
+\[\text{A} = \{2, 3\} \text{ and } \text{B} = \{1, 2\} \]
+
+\end{document}
