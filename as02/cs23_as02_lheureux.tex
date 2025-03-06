@@ -1,0 +1,148 @@
+\documentclass[11pt, letterpaper, includehead]{article}
+
+%%%%%%%%%%%%%%%%%%%%% Pre-document %%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{array}
+\usepackage{nicematrix}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{multicol}
+\usepackage{scrextend}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\setlength{\parindent}{0pt} % Remove auto paragraph indents
+
+% Get rid of those big margins
+\usepackage[margin=1in]{geometry}
+\newlength\titleindent
+\setlength\titleindent{2cm}
+
+\makeatletter
+\def\@mathmargin{1in}
+\makeatother
+
+\titleformat{\section}[runin]
+    {\normalfont\bfseries}% formatting commands to apply to the whole heading
+    {\thesubsection}% the label and number
+    {0.5em}% space between label/number and subsection title
+    {}% formatting commands applied just to subsection title
+    []% punctuation or other commands following subsection title
+
+
+\begin{document} 
+
+\pagestyle{fancy}
+% Header
+\fancyhead{}
+\fancyhead[L]{\textbf{CS23:} Assignment \#2}
+\fancyhead[R]{\href{mailto:stepanielh1111@gmail.com}{L'Heureux} \thepage}
+% No page numbers for footer
+\fancyfoot{}
+
+
+\begin{center}
+    \Large{\textbf{Assignment 2}}\\
+    \Large{Statements}
+\end{center}
+
+\begin{enumerate}[label=\textbf{\arabic*}.]
+    \item Suppose P and Q are the statements:
+\begin{enumerate}
+    \item[P.] Harry plays Magic: The Gathering.
+    \item[Q.] Sally plays Magic: The Gathering.
+\end{enumerate}
+
+\begin{enumerate}[label= (\alph*)]
+    \item Translate ``Harry and Sally both play Magic: The gathering'' into symbols.
+    \[P \wedge Q\]
+    \item Translate ``If Harry plays Magic: The Gathering, Sally does not'' into symbols.
+    \[P \rightarrow \neg Q \]
+    \item Translate ``$P \vee Q$'' into English.
+
+    ``Harry or Sally plays Magic: The Gathering''
+    \item Translate ``$\neg (P \wedge Q) \rightarrow Q$'' into English.
+    
+    ``If Harry and Sally both do not play Magic: The gathering, then Sally plays Magic: The Gathering''
+\end{enumerate}
+\item  Construct the Truth Table for the following statement form:
+\[(p \wedge q) \vee (\sim p \wedge q) \rightarrow q\]
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{cc|c}
+    $p$ & $q$ & $(p \wedge q) \vee (\sim p \wedge q) \rightarrow q$ \\ \hline
+    0 & 0 &  1\\
+    0 & 1 &  1\\
+    1 & 0 &  1\\
+    1 & 1 &  1\\
+    \end{tabular}
+\end{table}
+\item Determine whether each statement below is true or false, or whether it is impossible to determine. Assume you do not know what my favorite number is (but you do know that 13 is prime).
+
+\begin{enumerate}[label= (\alph*)]
+    \item If 13 is prime, then 13 is my favorite number.
+    
+    While the hypothesis is true, conclusion can be either true or false, so the statement's value is indeterminate.
+
+    \item If 13 is my favorite number, then 13 is prime.
+    
+    The conclusion is true so the statement is true (the value of the hypothesis does not matter).
+
+    \item If 13 is not prime, then 13 is my favorite number.
+        
+    The hypothesis is false so the statement is true.
+
+    \item 13 is my favorite number or 13 is prime.
+    
+    One of the atomic statements joined by an or is true so the entire statement is true.
+    
+    \item 13 is my favorite number and 13 is prime.
+
+    For an and conditional to be true, both atomic statements must be true. In this case, the statement ``13 is my favorite number'' is either true or false. Therefore the monocular statement's value cannot be determined.
+
+    \item 7 is my favorite number and 13 is not prime.
+
+    The hypothesis, may be either true or false, we do not have enough information to know and the conclusion is false, therefore the statement is Indeterminate.
+
+    \item 13 is my favorite number or 13 is not my favorite number.
+    
+    The atomic statements are opposites so one must be true. They are joined by or so the entire statement is true.
+\end{enumerate}
+\item You want to work for Google after college. You send an email to Google's HR director and they reply ``you will be hired only if you major in mathematics or computer science, get a B average or better, and take accounting.'' You become a math major, get a B+ average, and also take some accounting courses. You return to Google, apply for a job, and are turned down. Did the HR director lie to you?
+
+The conditions mentioned are necessary to be hired at Google, but may not be sufficient. The HR director did not lie.
+
+
+
+\item For a given predicate $P(x)$, you might believe that the statements $\forall x P(x)$ or $\exists x P(x)$ are either true or false.
+How would you decide if you were correct in each case? You have four choices: you could give an example of an element n in the domain for which P(n) is true or for which P(n) if false,
+or you could argue that no matter what n is, P(n) is true or is false.
+
+\begin{enumerate}[label= (\alph*)]
+    \item What would you need to do to prove $\forall xP(x)$ is true?
+
+    Prove $P(n)$ is true for any arbitrary value of $n$.
+    \item What would you need to do to prove $\forall xP(x)$ is false?
+
+    Prove $P(n)$ is false for a specific value of $n$.
+
+    \item What would you need to do to prove $\exists xP(x)$ is true?  
+
+    Prove $P(n)$ is true for a specific value of $n$.
+    \item What would you need to do to prove $\exists xP(x)$ is false?
+
+    Prove $P(n)$ is false for any arbitrary value of $n$.
+\end{enumerate}
+
+\end{enumerate}
+
+
+\end{document}

@@ -1,0 +1,145 @@
+\documentclass[11pt, letterpaper, includehead]{article}
+
+%%%%%%%%%%%%%%%%%%%%% Pre-document %%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{array}
+\usepackage{nicematrix}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{multicol}
+\usepackage{scrextend}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\setlength{\parindent}{0pt} % Remove auto paragraph indents
+
+% Get rid of those big margins
+\usepackage[margin=1in]{geometry}
+\newlength\titleindent
+\setlength\titleindent{2cm}
+
+\makeatletter
+\def\@mathmargin{1in}
+\makeatother
+
+\titleformat{\section}[runin]
+    {\normalfont\bfseries}% formatting commands to apply to the whole heading
+    {\thesubsection}% the label and number
+    {0.5em}% space between label/number and subsection title
+    {}% formatting commands applied just to subsection title
+    []% punctuation or other commands following subsection title
+
+\theoremstyle{plain}
+
+\newtheoremstyle{mydefinition}  % Name of the style
+  {} % Space above
+  {} % Space below
+  {\normalfont} % Body font (normal, not bold or italic)
+  {} % Indent amount
+  {\itshape} % Theorem head font (italic)
+  {.} % Punctuation after theorem head
+  {.5em} % Space after theorem head
+  {} % Theorem head spec (can be left empty)
+
+\theoremstyle{mydefinition}
+\newtheorem{defin}{Definition}
+
+\newtheoremstyle{myproperty}  % Name of the style
+  {} % Space above
+  {} % Space below
+  {\normalfont} % Body font (normal, not bold or italic)
+  {} % Indent amount
+  {\itshape} % Theorem head font (italic)
+  {.} % Punctuation after theorem head
+  {.5em} % Space after theorem head
+  {} % Theorem head spec (can be left empty)
+
+\theoremstyle{myproperty}
+\newtheorem{prop}{Property}
+
+\begin{document} 
+
+\pagestyle{fancy}
+% Header
+\fancyhead{}
+\fancyhead[L]{\textbf{CS23:} Assignment \#3}
+\fancyhead[R]{\href{mailto:stepanielh1111@gmail.com}{L'Heureux} \thepage}
+% No page numbers for footer
+\fancyfoot{}
+
+
+\begin{center}
+    \Large{\textbf{Assignment 3}}\\
+    \Large{Direct Proofs}
+\end{center}
+
+\begin{enumerate}[label=\textbf{\arabic*}., leftmargin=*]
+\item Prove of Disprove: Every positive integer can be expressed as a sum of three or fewer
+    perfect squares.
+\begin{defin}\label{def:def1a}
+    An integer $n$ is called a perfect square if, and only if, $n = k^2$ for some integer $k$.
+\end{defin}
+\begin{proof}
+    The theorem may be restated using the definition of perfect squares\ref{def:def1a}:
+    \[m = a^2 + b^2 + c^2, \quad \text{for some integers a, b, c, m.}\]
+
+    Let $m = 7$:
+    \[7 = a^2 + b^2 + c^2\]
+
+    The square of any integer is positive, and the sum of positive integers is always greater than each individual term of the sum. Therefore, $a, b, c \in [0, 6]$.
+
+    Testing all cases:
+
+    \[7 \neq 0^2 + 0^2 + 0^2 = 0, \quad a = 0, b = 0, c = 0\]
+    \[7 \neq 1^2 + 0^2 + 0^2 = 1, \quad a = 1, b = 0, c = 0\]
+    \[7 \neq 1^2 + 1^2 + 0^2 = 2, \quad a = 1, b = 1, c = 0\]
+    \[7 \neq 1^2 + 1^2 + 1^2 = 3, \quad a = 1, b = 1, c = 1\]
+    \[7 \neq 2^2 + 0^2 + 0^2 = 4, \quad a = 2, b = 0, c = 0\]
+    \[7 \neq 2^2 + 1^2 + 0^2 = 5, \quad a = 2, b = 1, c = 0\]
+    \[7 \neq 2^2 + 1^2 + 1^2 = 6, \quad a = 2, b = 1, c = 1\]
+    \[7 \neq 2^2 + 2^2 + 0^2 = 8, \quad a = 2, b = 2, c = 0\]
+
+    There are no integers $a, b, c$ such that $7 = a^2 + b^2 + c^2$. Therefore every positive integer cannot be expressed as a sum of three or fewer
+    perfect squares.
+
+\end{proof}
+
+\pagebreak 
+
+\item Prove or Disprove: If $m$ is any even integer and $n$ is any odd integer,
+then $(m + 2)^2 - (n - 1)^2$ is even.
+\begin{prop}\label{prop:prop2a}
+    The sum, product, or difference of any two even integers is even.
+\end{prop}
+
+\begin{prop}\label{prop:prop2b}
+    The sum, or difference of any two odd integers is even.
+\end{prop}
+\begin{proof} 
+    $m$ is even, so it can be described as:
+    \[ m = 2a, \quad \text{for some integer } a. \]
+    $n$ is odd, so it can be described as:
+    \[n = 2b + 1, \quad \text{for some integer } b.\]
+
+    Evaluating the first term:
+
+    \[(m + 2) = (2a + 2) = 2(a + 1), \quad \text{which is even}\]
+
+    Evaluating the second term:
+    \[(n - 1) = ((2b + 1) - 1) = (2b + 2) = 2(b + 1), \quad \text{which is even}\]
+
+    $(m + 2)$ and $(n - 1)$ are both even numbers.
+    
+    $(m + 2)(m + 2)$ and $(n - 1)(n - 1)$ are the product of two even numbers, which by property \ref{prop:prop2a} is also even.
+
+    Furthermore, by \ref{prop:prop2a}, the difference of two even numbers, $(m + 2)^2 - (n - 1)^2$, is even.
+
+    Therefore, if $m$ is any even integer and $n$ is any odd integer, then $(m + 2)^2 - (n - 1)^2$ is even.
+\end{proof}
+
+
+\end{enumerate}
+
+\end{document}
