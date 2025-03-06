@@ -73,15 +73,15 @@
     ``If Harry and Sally both do not play Magic: The gathering, then Sally plays Magic: The Gathering''
 \end{enumerate}
 \item  Construct the Truth Table for the following statement form:
-\[(p \wedge q) \vee (\sim p \wedge q) \rightarrow q\]
+\[(p \vee q) \vee (\sim p \wedge q) \rightarrow q\]
 
 \begin{table}[H]
     \centering
     \begin{tabular}{cc|c}
-    $p$ & $q$ & $(p \wedge q) \vee (\sim p \wedge q) \rightarrow q$ \\ \hline
+    $p$ & $q$ & $(p \vee q) \vee (\sim p \wedge q) \rightarrow q$ \\ \hline
     0 & 0 &  1\\
     0 & 1 &  1\\
-    1 & 0 &  1\\
+    1 & 0 &  0\\
     1 & 1 &  1\\
     \end{tabular}
 \end{table}
