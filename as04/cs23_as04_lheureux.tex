@@ -405,30 +405,45 @@
                     Therefore, $G$ must have $\lfloor \frac{n}{2} \rfloor + 1$ edges to guarantee at
                     least one vertex has degree two or greater.
                   \end{proof}
+
               \item[(b)] How many edges must the graph have to guarantee all vertices
                   have degree two or more? Prove your answer.
 
-                \begin{proof}
-                    By direct proof.
 
-                    Let $G$ be a graph in which $|V| = n$ and every vertex is degree 2.
+                \begin{proof} By direct proof.
 
-                    By the Handshake Lemma, the total number of edges in a graph is given by:
+                    Let $G$ be a graph with $|V| = n$.
+
+                    The maximum number of edges $G$ can have while one vertex $v$ is disconnected occurs when when the remaining $n - 1$ vertices form a complete subgraph $ K_{n-1} $. This subgraph has:
+                    
+                    
                     \[
-                    \sum_{v \in V} d(v) = 2e \quad \Rightarrow \quad e = \frac{1}{2} \sum_{v \in V} d(v)
+                    e = \frac{(n - 1)(n - 2)}{2}
+                    \]
+                    
+                    Every vertex in $ K_{n-1} $ has degree $ n - 2 $, which is at least 2 for all $ n \geq 4 $.
+                    
+                    Now, add one edge connecting $ v $ to a vertex $ u \in K_{n-1} $, so that $v$ has degree 1. The total number of edges is now:
+                    
+                    \[
+                    e = \frac{(n - 1)(n - 2)}{2} + 1.
+                    \]
+                                        
+                    Now, add one more edge connecting $ v $ to another vertex $ w \in K_{n-1} $, so that $ v $ is now adjacent to two vertices.
+                    
+                    Therefore $ \deg(v) = 2 $ and all other vertices still have degree at least $ n - 2 $ because edges were never removed. 
+                    
+                    The minimum total number of edges is then:
+                    \[
+                    e = \frac{(n - 1)(n - 2)}{2} + 2.
                     \]
 
-                    Since every vertex has degree 2, the sum of the degrees is:
-                    \[
-                    \sum_{i=1}^{n} 2 = 2n \quad \Rightarrow \quad e = \frac{2n}{2} = n
-                    \]
-
-                    Therefore, the $G$ must have at least $n$ edges to ensure every vertex is at least degree 2.
-
-                \end{proof}
+                    $G$ must have $\frac{(n - 1)(n - 2)}{2} + 2$ to guarantee all vertices have degree two or more.
+                    
+                    \end{proof}
+                    
           \end{enumerate}
         
-    \pagebreak
     \item Which of the graphs below are bipartite? Justify your answers.
     
     $G_1$ (\ref{fig:6.G1}), $G_2$ (\ref{fig:6.G2}), and $G_4$ (\ref{fig:6.G4}) are bipartite. $G_3$ (\ref{fig:6.G3}) is not bipartite.
