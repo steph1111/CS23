@@ -1,0 +1,116 @@
+\documentclass[11pt, letterpaper, includehead]{article}
+
+%%%%%%%%%%%%%%%%%%%%% Pre-document %%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{array}
+\usepackage{nicematrix}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{multicol}
+\usepackage{scrextend}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{tikz}
+
+\setlength{\parindent}{0pt} % Remove auto paragraph indents
+
+% Get rid of those big margins
+\usepackage[margin=1in]{geometry}
+\newlength\titleindent
+\setlength\titleindent{2cm}
+
+\makeatletter
+\def\@mathmargin{1in}
+\makeatother
+
+\titleformat{\section}[runin]
+{\normalfont\bfseries}% formatting commands to apply to the whole heading
+{\thesubsection}% the label and number
+{0.5em}% space between label/number and subsection title
+{}% formatting commands applied just to subsection title
+[]% punctuation or other commands following subsection title
+
+\theoremstyle{plain}
+
+\newtheoremstyle{mydefinition}	% Name of the style
+{} % Space above
+{} % Space below
+{\normalfont} % Body font (normal, not bold or italic)
+{} % Indent amount
+{\itshape} % Theorem head font (italic)
+{.} % Punctuation after theorem head
+{.5em} % Space after theorem head
+{} % Theorem head spec (can be left empty)
+
+\theoremstyle{mydefinition}
+\newtheorem{defin}{Definition}
+
+\newtheoremstyle{myproperty}  % Name of the style
+{} % Space above
+{} % Space below
+{\normalfont} % Body font (normal, not bold or italic)
+{} % Indent amount
+{\itshape} % Theorem head font (italic)
+{.} % Punctuation after theorem head
+{.5em} % Space after theorem head
+{} % Theorem head spec (can be left empty)
+
+\theoremstyle{myproperty}
+\newtheorem{prop}{Property}
+
+\begin{document}
+
+\pagestyle{fancy}
+% Header
+\fancyhead{}
+\fancyhead[L]{\textbf{CS23:} Assignment \#5}
+\fancyhead[R]{\href{mailto:stepanielh1111@gmail.com}{L'Heureux} \thepage}
+% No page numbers for footer
+\fancyfoot{}
+
+\begin{center}
+    \Large{\textbf{Assignment 5}}\\
+    \Large{Trees and More Graphs}
+\end{center}
+
+\begin{enumerate}[label=\textbf{\arabic*}., leftmargin=*]
+    \item We often define graph theory concepts using set theory. For example given a graph $G = (V, E)$ and a vertex $v \in V$, we define
+    \[N(v) = \{ u \in V : {v, u} \in E\} \]
+    We define $N[v] = N(v) \cup \{ v\} $. The goal of this problem is to figure out what all this means.
+
+        
+    \begin{enumerate}[label=(\alph*)]
+        \item Let $G$ be the graph with $V = \{ a,b,c,d,e,f \} $ and
+            \\$E = \{  \{ a,b \}, \{ a,e \},\{ b,c \}, \{ b,e \}, \{ c, d\}, \{ c, f\}, \{ d,f \}, \{ e,f \} \} $. 
+            Find $N(a), N[a], N(c), \text{and} N[c]$.
+        \item What is the largest and smallest possible values for $|N(v)|$ and $|N[v]|$ for the graph from part (a)? Explain.
+        \item Give an example of a graph $G = (V, E)$ (Probably different from the one above) for which $N[v] = V$ for some vertex $v \in V$. Is there a graph for which $N[v] = V$ for \emph{all} $v \in V$? Explain.
+        \item Give an example of a graph $G = (V, E)$ for which $N(v) = \emptyset$  for some $v \in V$. Is there an example of such graph for which $N[u] = V$ for some other $u \in V$ as well? Explain.
+        \item Describe in words what $N(v)$ and $N[v]$ mean in general.
+    \end{enumerate}
+
+    \item Which of the following graphs are trees
+    \begin{enumerate}[label=(\alph*)]
+        \item $G = (V, E)$ with $V = \{a, b, c, d, e\}$ and $E = \{ \{a, b \}, \{a, e \}, \{b, c \}, \{c, d \}, \{d, e\}\}$
+        \item $G = (V, E)$ with $V = \{a, b, c, d, e\}$ and $E = \{ \{a, b \}, \{b, c \}, \{c, d \}, \{d, e \}\}$
+        \item $G = (V, E)$ with $V = \{a, b, c, d, e\}$ and $E = \{ \{a, b \}, \{a, c \}, \{a, d \}, \{a, e \}\}$
+        \item $G = (V, E)$ with $V = \{a, b, c, d, e\}$ and $E = \{ \{a, b \}, \{a, c \}, \{d, e \}\}$
+    \end{enumerate}
+
+    \item For each degree sequence below, decide wether it must always, must never, or could possibly be a degree sequence for a tree. Remember, a degree sequence lists out the degrees (number of edges incident to the vertex) of all the vertices in a graph in non-increasing order.
+    \begin{enumerate}[label=(\alph*)]
+        \item $(4, 1, 1, 1, 1)$
+        \item $(3, 3, 2, 1, 1)$
+        \item $(2, 2, 2, 1, 1)$
+        \item $(4, 4, 3, 3, 3, 2, 2, 1, 1, 1, 1, 1, 1, 1)$
+    \end{enumerate}
+
+    \item Suppose you have a graph with $v$ vertices and $e$ edges that satisfies $v = e + 1$. Must the graph be a tree? Prove your answer.
+    \item Prove that any graph (not necessarily a tree) with $v$ vertices and $e$ edges that satisfies $v > e + 1$ will NOT be connected.
+    \item Let $T$ be a rooted tree that contains vertices $v, u, \text{and} w$ (among possibly others). Prove that if $w$ is a descendant of both $u \text{and} v$ then $u$ is a descendant of $v$ or $v$ is a descendant of $u$.
+    \item Prove that every connected graph which is not itself a tree must have at last three different spanning trees.
+\end{enumerate}
+
+\end{document}
