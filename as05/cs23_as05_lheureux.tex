@@ -86,9 +86,9 @@
             \\$E = \{  \{ a,b \}, \{ a,e \},\{ b,c \}, \{ b,e \}, \{ c, d\}, \{ c, f\}, \{ d,f \}, \{ e,f \} \} $. 
             Find $N(a), N[a], N(c), \text{and} N[c]$.
 
-                \[N(a) = \{b, e\} \quad
-                N[a] = \{a, b, e\} \quad
-                N(c) = \{b, d, f\} \quad 
+                \[N(a) = \{b, e\}   \quad
+                N[a] = \{a, b, e\}  \quad
+                N(c) = \{b, d, f\}  \quad 
                 N[c] = \{b, c, d, f\}\]
         \item What is the largest and smallest possible values for $|N(v)|$ and $|N[v]|$ for the graph from part (a)? Explain.
         
@@ -115,7 +115,6 @@
 
         \begin{figure}[H]
             \centering
-        
             \begin{minipage}[t]{0.45\textwidth}
                 \centering
                 \begin{tikzpicture}[scale=1.5, every node/.style={circle, fill=black, inner sep=1.5pt}]
@@ -153,7 +152,6 @@
             \end{minipage}
         \end{figure}
         
-        
         \item Give an example of a graph $G = (V, E)$ for which $N(v) = \emptyset$  for some $v \in V$. Is there an example of such graph for which $N[u] = V$ for some other $u \in V$ as well? Explain.
         
         An example of a graph for or which $N(v) = \emptyset$ for some $v \in V$ is any graph with an unconnected vertex $v$. Consider the example:
@@ -185,11 +183,11 @@
 
     \item For each degree sequence below, decide wether it must always, must never, or could possibly be a degree sequence for a tree. Remember, a degree sequence lists out the degrees (number of edges incident to the vertex) of all the vertices in a graph in non-increasing order.
     
-    We know given a degree sequence, the number of edges is given by the Handshake Lemma:
+        We know given a degree sequence, the number of edges is given by the Handshake Lemma:
         \[
             \sum_{v \in V} d(v) = 2e \quad \Rightarrow \quad e = \frac{1}{2} \sum_{v \in V} d(v)
         \]
-    And tree always satisfies:
+        And tree always satisfies:
         \[e + 1 = v\]
 
     \begin{enumerate}[label=(\alph*)]
