@@ -13,7 +13,6 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{tikz}
-\include{caption}
 
 \setlength{\parindent}{0pt} % Remove auto paragraph indents
 
@@ -230,11 +229,11 @@
 
         Assume there exists a connected graph $G$ with $v$ vertices and $e$ edges that satisfies $v > e + 1$.
     
-        We know every connected graph has a spanning tree.
+        We know every connected graph has a spanning tree. A spanning tree will have $v' = v$ vertices and $e' \leq e$ edges. 
+        
+        Thus the spanning tree will also have $v' > e' + 1$.
 
-        A tree must have $v = e + 1$.
-
-        But $G$ has $v > e + 1$ which is a contradiction so $G$ must not be connected.
+        But a tree must have $v = e + 1$, which is a contradiction, thus $G$ is not connected. 
 
         Therefore any graph with $v$ vertices and $e$ edges that satisfies $v > e + 1$ will NOT be connected.
     \end{proof}
@@ -262,7 +261,7 @@
 
         $G$ must therefore contain at least one cycle $C_n$ connecting some $n$ vertices.  
 
-        We may obtain a spanning tree of $G$ by removing any single edge from the cycle $C_n$. Since the cycle contains $n$ edges, there are $n$ distinct ways to remove one edge and each may produce a unique spanning tree.
+        To obtain a spanning tree we must remove an edge from the cycle $C_n$. Since the cycle contains $n$ edges, there are at least $n$ distinct ways to remove an edge and each may produce a unique spanning tree.
 
         Consider the minimum example in which $G$ contains only one cycle $C_3$. $C_3$ has three vertices and three edges. In this minimal case, there are three edges which can be removed, each producing a distinct spanning tree. 
 
