@@ -289,7 +289,8 @@
         
         \item Suppose you have a bipartite graph $G$ in which one part has at least two more vertices than the other. Prove that $G$ does not have a Hamilton path.
 
-        \begin{proof}
+        \begin{proof} By contradiction
+    
             Let $G$ be a bipartite graph with sets $A$ and $B$ such that $|A| \ge |B| + 2$.
             
             Because G is bipartite, if a Hamilton path exists, the vertices in the path will alternate between vertices in A and vertices in B.
@@ -474,7 +475,10 @@
                 }
             \end{tikzpicture}
             \end{center}
+    \pagebreak 
+
     \item Draw a graph with chromatic number 5. Could your graph be planar? Explain.
+    
     No because by the Four Color Theorem which states that ``If $G$ is a planar graph, then the chromatic number of $G$ is less than or equal to 4.'' 
 
     \begin{center}
@@ -504,154 +508,50 @@
     W6 = \{Voormann, Paul, Ringo\}\\
 \end{enumerate}
 
-
-% \begin{tikzpicture}[scale=2, every node/.style={draw, circle, minimum size=0.75cm}, font=\tiny]
-%     \node (W1) at (0:1cm) {W1};
-%     \node (W2) at (60:1cm) {W2};
-%     \node (W3) at (120:1cm) {W3};
-%     \node (W4) at (180:1cm) {W4};
-%     \node (W5) at (240:1cm) {W5};
-%     \node (W6) at (300:1cm) {W6};
-
-%     % John
-%     \draw (W3) -- (W1);
-%     \draw (W1) -- (W5);
-%     \draw (W5) -- (W3);
-
-%     % Voormann
-%     \draw (W2) -- (W1);
-%     \draw (W1) -- (W6);
-%     \draw (W5) -- (W6);
-%     \draw (W5) -- (W2);
-%     \draw (W1) -- (W5);
-%     \draw (W6) -- (W2);
-
-%     % Ringo
-%     \draw (W3) -- (W1);
-%     \draw (W3) -- (W6);
-%     \draw (W3) -- (W4);
-%     \draw (W4) -- (W1);
-%     \draw (W4) -- (W6);
-%     \draw (W1) -- (W6);
-
-%     % George
-%     \draw (W4) -- (W2);
-
-%     % Paul
-%     \draw (W3) -- (W2);
-%     \draw (W3) -- (W4);
-%     \draw (W3) -- (W6);
-%     \draw (W2) -- (W6);
-%     \draw (W2) -- (W4);
-%     \draw (W4) -- (W6);
-
-% \end{tikzpicture}
-
-
-
 \begin{center}
-    % Row 1
-    \begin{minipage}{0.45\textwidth}
-    \centering
-    {John}\\[5pt]
-    \begin{tikzpicture}[scale=2, every node/.style={draw, circle, minimum size=0.75cm}, font=\tiny]
-        \node (W1) at (0:1cm) {W1};
-        \node (W2) at (60:1cm) {W2};
-        \node (W3) at (120:1cm) {W3};
-        \node (W4) at (180:1cm) {W4};
-        \node (W5) at (240:1cm) {W5};
-        \node (W6) at (300:1cm) {W6};
-    
-        \draw (W3) -- (W1);
-        \draw (W1) -- (W5);
-        \draw (W5) -- (W3);
-    \end{tikzpicture}
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.45\textwidth}
-    \centering
-    {Voormann}\\[5pt]
-    \begin{tikzpicture}[scale=2, every node/.style={draw, circle, minimum size=0.75cm}, font=\tiny]
-        \node (W1) at (0:1cm) {W1};
-        \node (W2) at (60:1cm) {W2};
-        \node (W3) at (120:1cm) {W3};
-        \node (W4) at (180:1cm) {W4};
-        \node (W5) at (240:1cm) {W5};
-        \node (W6) at (300:1cm) {W6};
-    
-        \draw (W2) -- (W1);
-        \draw (W1) -- (W6);
-        \draw (W5) -- (W6);
-        \draw (W5) -- (W2);
-        \draw (W1) -- (W5);
-        \draw (W6) -- (W2);
-    \end{tikzpicture}
-    \end{minipage}
-    
-    \vspace{1cm}
-    
-    % Row 2
-    \begin{minipage}{0.45\textwidth}
-    \centering
-    {Ringo}\\[5pt]
-    \begin{tikzpicture}[scale=2, every node/.style={draw, circle, minimum size=0.75cm}, font=\tiny]
-        \node (W1) at (0:1cm) {W1};
-        \node (W2) at (60:1cm) {W2};
-        \node (W3) at (120:1cm) {W3};
-        \node (W4) at (180:1cm) {W4};
-        \node (W5) at (240:1cm) {W5};
-        \node (W6) at (300:1cm) {W6};
-    
-        \draw (W3) -- (W1);
-        \draw (W3) -- (W6);
-        \draw (W3) -- (W4);
-        \draw (W4) -- (W1);
-        \draw (W4) -- (W6);
-        \draw (W1) -- (W6);
-    \end{tikzpicture}
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.45\textwidth}
-    \centering
-    {George}\\[5pt]
-    \begin{tikzpicture}[scale=2, every node/.style={draw, circle, minimum size=0.75cm}, font=\tiny]
-        \node (W1) at (0:1cm) {W1};
-        \node (W2) at (60:1cm) {W2};
-        \node (W3) at (120:1cm) {W3};
-        \node (W4) at (180:1cm) {W4};
-        \node (W5) at (240:1cm) {W5};
-        \node (W6) at (300:1cm) {W6};
-    
-        \draw (W4) -- (W2);
-    \end{tikzpicture}
-    \end{minipage}
-    
-    \vspace{1cm}
-    
-    % Row 3
-    \begin{minipage}{0.45\textwidth}
-    \centering
-    {Paul}\\[5pt]
-    \begin{tikzpicture}[scale=2, every node/.style={draw, circle, minimum size=0.75cm}, font=\tiny]
-        \node (W1) at (0:1cm) {W1};
-        \node (W2) at (60:1cm) {W2};
-        \node (W3) at (120:1cm) {W3};
-        \node (W4) at (180:1cm) {W4};
-        \node (W5) at (240:1cm) {W5};
-        \node (W6) at (300:1cm) {W6};
-    
-        \draw (W3) -- (W2);
-        \draw (W3) -- (W4);
-        \draw (W3) -- (W6);
-        \draw (W2) -- (W6);
-        \draw (W2) -- (W4);
-        \draw (W4) -- (W6);
-    \end{tikzpicture}
-    \end{minipage}
- \end{center}
+\begin{tikzpicture}[scale=2, every node/.style={draw, circle, minimum size=0.75cm}, font=\tiny]
+    \node [fill=red!20] (W1) at (0:1cm) {W1};
+    \node [fill=blue!20](W2) at (60:1cm) {W2};
+    \node [fill=purple!20] (W3) at (120:1cm) {W3};
+    \node [fill=orange!20](W4) at (180:1cm) {W4};
+    \node [fill=orange!20](W5) at (240:1cm) {W5};
+    \node [fill=green!20](W6) at (300:1cm) {W6};
 
- \vspace*{-0.4 cm}
- Eight meeting times are required.
-    
+    % John
+    \draw (W3) -- (W1);
+    \draw (W1) -- (W5);
+    \draw (W5) -- (W3);
+
+    % Voormann
+    \draw (W2) -- (W1);
+    \draw (W1) -- (W6);
+    \draw (W5) -- (W6);
+    \draw (W5) -- (W2);
+    \draw (W1) -- (W5);
+    \draw (W6) -- (W2);
+
+    % Ringo
+    \draw (W3) -- (W1);
+    \draw (W3) -- (W6);
+    \draw (W3) -- (W4);
+    \draw (W4) -- (W1);
+    \draw (W4) -- (W6);
+    \draw (W1) -- (W6);
+
+    % George
+    \draw (W4) -- (W2);
+
+    % Paul
+    \draw (W3) -- (W2);
+    \draw (W3) -- (W4);
+    \draw (W3) -- (W6);
+    \draw (W2) -- (W6);
+    \draw (W2) -- (W4);
+    \draw (W4) -- (W6);
+
+\end{tikzpicture}
+\end{center}
+
+5 meeting times are needed.
 
 \end{document}
