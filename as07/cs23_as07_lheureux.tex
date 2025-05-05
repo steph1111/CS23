@@ -1,0 +1,114 @@
+\documentclass[11pt, letterpaper, includehead]{article}
+
+%%%%%%%%%%%%%%%%%%%%% Pre-document %%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{array}
+\usepackage{nicematrix}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{multicol}
+\usepackage{scrextend}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\setlength{\parindent}{0pt} % Remove auto paragraph indents
+
+% Get rid of those big margins
+\usepackage[margin=1in]{geometry}
+\newlength\titleindent
+\setlength\titleindent{2cm}
+
+\makeatletter
+\def\@mathmargin{1in}
+\makeatother
+
+\titleformat{\section}[runin]
+    {\normalfont\bfseries}% formatting commands to apply to the whole heading
+    {\thesubsection}% the label and number
+    {0.5em}% space between label/number and subsection title
+    {}% formatting commands applied just to subsection title
+    []% punctuation or other commands following subsection title
+
+\theoremstyle{plain}
+
+\newtheoremstyle{mydefinition}  % Name of the style
+  {} % Space above
+  {} % Space below
+  {\normalfont} % Body font (normal, not bold or italic)
+  {} % Indent amount
+  {\itshape} % Theorem head font (italic)
+  {.} % Punctuation after theorem head
+  {.5em} % Space after theorem head
+  {} % Theorem head spec (can be left empty)
+
+\theoremstyle{mydefinition}
+\newtheorem{defin}{Definition}
+
+\newtheoremstyle{myproperty}  % Name of the style
+  {} % Space above
+  {} % Space below
+  {\normalfont} % Body font (normal, not bold or italic)
+  {} % Indent amount
+  {\itshape} % Theorem head font (italic)
+  {.} % Punctuation after theorem head
+  {.5em} % Space after theorem head
+  {} % Theorem head spec (can be left empty)
+
+\theoremstyle{myproperty}
+\newtheorem{prop}{Property}
+
+\begin{document} 
+
+\pagestyle{fancy}
+% Header
+\fancyhead{}
+\fancyhead[L]{\textbf{CS23:} Assignment \#7}
+\fancyhead[R]{\href{mailto:stepanielh1111@gmail.com}{L'Heureux} \thepage}
+% No page numbers for footer
+\fancyfoot{}
+
+
+\begin{center}
+    \Large{\textbf{Assignment 7}}\\
+    \Large{Counting: Part 1}
+\end{center}
+
+\begin{enumerate}[label=\textbf{\arabic*}., leftmargin=*]
+\item For your college interview, you must wear a tie. You own 3 regular (boring) ties and 5 (cool) bow ties.
+\begin{enumerate}[label=(\alph*)]
+    \item How many choices do you have for your neck-wear?
+    \item You realize that the interview is for clown college, so you should probably wear both a regular tie and a bow tie. How many choices do you have now?
+    \item For the rest of your outfit, you have 5 shirts, 4 skirts, 3 pants, and 7 dresses. You want to select either a shirt to wear with a skirt or pants, or just a dress. How many outfits do you have to choose from?
+\end{enumerate}
+
+\item Hexadecimal, or base 16, uses 16 distinct digits that can be used to form numbers: {0,1,...,9,A,B,C,D,E,F}. So for example, a 3 digit hexadecimal number might be 2B8.
+\begin{enumerate}[label=(\alph*)]
+    \item How many 2-digit hexadecimals are there in which the first digit is E or F? Explain your answer in terms of the additive principle (using either events or sets).
+    \item Explain why your answer to the previous part is correct in terms of the multiplicative principle (using either events or sets). Why do both the additive and multiplicative principles give you the same answer?
+    \item How many 3-digit hexadecimals start with a letter (A-F) and end with a numeral (0-9)? Explain.
+    \item How many 3-digit hexadecimals start with a letter (A-F) or end with a numeral (0-9) (or both)? Explain.
+\end{enumerate}
+
+\item If $|M|$ and $|N| = 42$, what is $|M \cup N| + |M \cap N|$?
+\item Consider all 5 letter ``words'' made from the letters a through f. (Recall, words are just strings of letters, not necessarily actual English words.)
+\begin{enumerate}[label=(\alph*)]
+    \item How many of these words are there total?
+    \item How many of these words contain no repeated letters?
+    \item How many of these words start with the sub-word ``aba''?
+    \item How many of these words either start with ``abc'' or end with ``cba'' or both?
+    \item How many of the words containing no repeats also do not contain the sub-word ``bad''?
+\end{enumerate}
+
+\item Consider the bit strings in B(6,2) (bit strings of length 6 and weight 2).
+\begin{enumerate}[label=(\alph*)]
+    \item How many of those bit strings start with 1?
+    \item How many of those bit strings start with 01?
+    \item How many of those bit strings start with 001?
+    \item Are there any other strings we have not counted yet? Which ones, and how many are there?
+    \item How many bit strings are there total in B(6,2)?
+\end{enumerate}
+\end{enumerate}
+
+\end{document}
