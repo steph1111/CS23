@@ -102,19 +102,61 @@
     \[
     B = \left\{
     \begin{array}{llllll}
-    \text{BGB}, & \text{BRB}, & \text{BBG}, & \text{BGG}, & \text{BBR}, & \text{BRR}, \\ 
-    \text{GBB}, & \text{GGB}, & \text{GBG}, & \text{GRG}, & \text{GGR}, & \text{GRR}, \\
-    \text{RBB}, & \text{RRB}, & \text{RGG}, & \text{RRG}, & \text{RBR}, & \text{RGR}
+    \text{BGB}, & \text{BRB}, & \text{BGG}, & \text{BRR}, \\ 
+    \text{GBB}, & \text{GGB}, & \text{GRG}, & \text{GRR}, \\
+    \text{RBB}, & \text{RRB}, & \text{RGG}, & \text{RRG}
     \end{array}
     \right\}
     \]
 
-    \[Pr(B) = \frac{18}{27} \approx 0.67\]
+    \[Pr(B) = \frac{12}{27} \approx 0.44\]
 \end{enumerate}
 
 \item You have two hats. The first hat contains two orange marbles and seven red marbles; the second hat contains four orange marbles and three red marbles. Bob selects a marble by first choosing one of the two hats at random. He then selects one of the marbles in this hat at random. If Bob has selected a red marble, what is the probability that he selected a marble from the first hat?
 
+Let the first and second hats be represented by $H_1$ and $H_2$, respectively. And selecting a red marble be $R$ and orange $O$.
+
+We know the probabilities of selecting $H_1$ and $H_2$.
+\[Pr(H_1) = 0.5 \text{ and } Pr(H_2) = 0.5\]
+
+We also know the probabilities of selecting a red marble in each hat:
+\[Pr(R|H_1) = \frac{7}{9} \text{ and } Pr(R|H_2) = \frac{3}{7}\]
+
+We ask what is the probability of $H_1$ given $R$. Or $Pr(H_1 | R)$ which can be found using Bayes Theorem:
+
+\[Pr(H_1|R) = \frac{Pr(R|H_1) \cdot Pr(H_1)}{Pr(R)}\]
+
+We do yet know $Pr(R)$ but can find it using total probability:
+
+\[Pr(R) = Pr(R|H_1)Pr(H_1) + Pr(R|H_2)Pr(H_2) = \frac{7}{9} \cdot 0.5 + \frac{3}{7} \cdot 0.5 = \frac{38}{63}\]
+
+Finally to find $Pr(H_1 | R):$
+
+\[Pr(H_1| R) = \frac{ 7/9 \cdot 0.5}{ 38 / 63} \approx 0.68\]
+
 \item  Suppose that the words ``Act now'' occurs in 250 of 2000 messages known to be spam and in 5 of 1000 messages known not to be spam. Estimate the probability that an incoming message containing the words ``Act now'' is spam, assuming that it is initially equally likely that an incoming message is spam or not spam. If our threshold for rejecting a message as spam is 0.9, will we reject this incoming message?
+
+Let $S$ and $\overline{S}$ be a spam and not spam message respectively. Additionally let $A$ represent if the message contains ``Act now''.
+
+The we know the probability of spam and not spam message containing ``Act now''.
+
+\[Pr(A|S) = \frac{250}{2000} = \frac{1}{8} \text{ and } Pr(A| \overline{S}) = \frac{5}{1000} = \frac{1}{200}\]
+
+We also know the probability of a spam and not spam message are equal, so:
+\[Pr(S) = 0.5 \text{ and } Pr(\overline{S}) = 0.5\]
+
+We ask the probability an incoming message is spam, given it contains ``Act now'', or $Pr(S|A)$.
+
+\[Pr(S|A) = \frac{Pr(A|S) \cdot Pr(S)}{Pr(A)}\]
+
+We need to find $Pr(A)$ and will do this using total probability:
+
+\[Pr(A) = Pr(A|S) \cdot Pr(S) + Pr(A|\overline{S}) \cdot Pr(\overline{S}) = \frac{1}{8} \cdot 0.5 + \frac{1}{200} \cdot 0.5 = \frac{13}{200}\]
+
+Now can find $Pr(S|A)$:
+\[Pr(S|A) = \frac{1/8 \cdot 0.5}{13/200} \approx 0.96\]
+
+We will reject the incoming message.
 
 \end{enumerate}
 
