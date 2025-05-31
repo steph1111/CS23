@@ -42,11 +42,7 @@ class FSM:
         current = self.start
         for symbol in self.inputs:
             current = self.transitions[current][symbol]
-    
-        if current in self.accepting:
-            print("accepted\n")
-        else:
-            print("rejected\n")
+        print("accepted\n" if current in self.accepting else "rejected\n")
 
 
     def _non_detrm(self):
@@ -68,16 +64,7 @@ class FSM:
                     new_current.add(self.transitions[c][s])
             current = new_current
 
-        accept = False
-        for state in current:
-            if state in self.accepting:
-                accept = True
-                break
-
-        if accept:
-            print("accepted")
-        else:
-            print("rejected")
+        print("accepted\n" if any(state in self.accepting for state in current) else "rejected\n")
 
 
 if __name__ == "__main__":
